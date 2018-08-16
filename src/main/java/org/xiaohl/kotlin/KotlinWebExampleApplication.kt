@@ -1,5 +1,6 @@
 package org.xiaohl.kotlin
 
+import org.mybatis.spring.annotation.MapperScan
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
@@ -10,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
  * @since JDK1.7
  */
 @SpringBootApplication
+@MapperScan("org.xiaohl.kotlin.dao")
 class KotlinWebExampleApplication
 
 fun main(args: Array<String>) {
