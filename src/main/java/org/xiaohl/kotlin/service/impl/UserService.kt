@@ -1,9 +1,10 @@
-package org.xiaohl.kotlin.service
+package org.xiaohl.kotlin.service.impl
 
 import org.springframework.stereotype.Service
 import org.xiaohl.kotlin.dao.UserMapper
 import org.xiaohl.kotlin.entity.User
-import org.xiaohl.kotlin.service.impl.IUserService
+import org.xiaohl.kotlin.service.IUserService
+import java.sql.Timestamp
 import javax.annotation.Resource
 
 /**
@@ -24,6 +25,12 @@ class UserService: IUserService {
 
     override fun findByName(name: String): User {
         return userMapper.findByName(name)
+    }
+
+    override fun insert(user: User) {
+        user.createTime = Timestamp(System.currentTimeMillis())
+        user.phone = "111"
+        userMapper.insert(user)
     }
 
 }

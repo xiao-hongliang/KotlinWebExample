@@ -1,10 +1,8 @@
 package org.xiaohl.kotlin.controller
 
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.ResponseBody
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import org.xiaohl.kotlin.entity.User
-import org.xiaohl.kotlin.service.impl.IUserService
+import org.xiaohl.kotlin.service.IUserService
 import javax.annotation.Resource
 
 /**
@@ -24,6 +22,19 @@ class UserController {
     @ResponseBody
     fun list(): List<User> {
         return userService.findList()
+    }
+
+    @RequestMapping("userInfo")
+    @ResponseBody
+    fun userInfo(name: String): User {
+        return userService.findByName(name)
+    }
+
+    @PostMapping("insert")
+    @ResponseBody
+    fun insert(@RequestBody user: User): String {
+        userService.insert(user)
+        return "新增成功"
     }
 
 }

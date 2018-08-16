@@ -10,8 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
  * @date 2018/6/29
  * @since JDK1.7
  */
-@SpringBootApplication
 @MapperScan("org.xiaohl.kotlin.dao")
+@SpringBootApplication
 class KotlinWebExampleApplication
 
 fun main(args: Array<String>) {

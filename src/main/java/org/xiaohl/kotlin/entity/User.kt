@@ -1,6 +1,7 @@
 package org.xiaohl.kotlin.entity
 
-import java.util.*
+import java.sql.Timestamp
+
 
 /**
  * 旅客信息
@@ -10,10 +11,10 @@ import java.util.*
  * @version 1.0.0.0
  */
 data class User (
-    val id:Int,
-    val name:String,
-    val sex:String,
-    val phone:String,
-    val account:String,
-    val createTime:Date
+        val id:Long,
+        val name:String,
+        val sex:String,
+        var phone:String,
+        val account:String,
+        var createTime: Timestamp
 )

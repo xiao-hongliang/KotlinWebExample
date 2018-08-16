@@ -1,4 +1,4 @@
-package org.xiaohl.kotlin.service.impl
+package org.xiaohl.kotlin.service
 
 import org.xiaohl.kotlin.entity.User
 
@@ -13,4 +13,6 @@ interface IUserService {
     fun findList(): List<User>
 
     fun findByName(name:String): User
+
+    fun insert(user: User)
 }
